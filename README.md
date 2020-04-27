@@ -1,5 +1,5 @@
-# pytorch-faster-rcnn
-This is an object detector which uses Faster RCNN at it's backend. Faster RCNN model used here is forked from ruotianluo's pytorch-faster-rcnn repository.
+# object-detector
+It detects the target objects in a given image and then specifies them in a bounding box. It uses Faster RCNN at it's backend which is forked from ruotianluo's pytorch-faster-rcnn repository.
 
 ## Prerequisites-
 (‘.’ in the path of a file specifies the root directory of faster rcnn)
@@ -10,9 +10,7 @@ This is an object detector which uses Faster RCNN at it's backend. Faster RCNN m
 
 3. Populate the ./data/imagenet_weights with the .pth files of the backbone CNN networks to be used for training process.
 
-4. Place the image folders and their csv files(obtained from exporting the labels and then writing gTruth of that file, in MATLAB) in dataset folder, located in the root directory of the Faster RCNN. Remember that the names of the image folders and their csv files must be the same and start with ‘img’ prefix, followed by a number or a string.
-
-Use the following MATLAB code to convert the .mat annotations to csv files,
+4. Place the image folders and their csv files(obtained from exporting the labels and then writing gTruth of that file, in MATLAB) in dataset folder, located in the root directory of the Faster RCNN. Remember that the names of the image folders and their csv files must be the same and start with ‘img’ prefix, followed by a number or a string. Use the following MATLAB code to convert the .mat annotations to csv files,
 
 	>> load(‘path/to/example.mat’)
 	>> gTruth
