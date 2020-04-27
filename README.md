@@ -1,7 +1,7 @@
 # object-detector
 It detects the target objects in a given image and then specifies them in a bounding box. It uses Faster RCNN at it's backend which is forked from ruotianluo's pytorch-faster-rcnn repository.
 
-Here a custom dataset was used for training instead of a standard dataset. It allows for the flexibility to use a dataset with our own images and classes which may be different than a standard dataset. The code written uses images and .mat labels file(created after image annotations) from MATLAB to create the custom dataset. More than one image folders can also be used at once for conversion to dataset. The code for conversion also takes care of corner cases like -ve annotation values, non-jpeg images(problem while creating xml files) and missing class in a particular folder of images. Complete procedure and requirements have been specified below.
+Here a custom dataset(of PascalVOC2007 format) was used for training instead of a standard dataset. It allows for the flexibility to use a dataset with our own images and classes which may be different than a standard dataset. The code written uses images and .mat labels file(created after image annotations) from MATLAB to create the custom dataset. More than one image folders can also be used at once for conversion to dataset. The code for conversion also takes care of corner cases like -ve annotation values, non-jpeg images(problem while creating xml files) and missing class in a particular folder of images. Complete procedure and requirements have been specified below.
 
 Several changes have been made to pytorch-faster-rcnn repository to make it work for this project,
 
@@ -64,6 +64,8 @@ Inference Results(with conf. score > 0.8) : https://drive.google.com/open?id=1Yi
 OR
 
 Run create_random.ipynb to select random images for test and train. Works same as create.ipynb just selects images randomly.
+
+After the 2nd step the custom dataset is ready and is present at .data/VOCdevkit2007. It is basically a format of PascalVOC2007 but containing self specified classes and images.
 
 ### 3. Adjust the paramaters 
 Adjust the parameters according to yourself in ‘train_faster_rcnn.sh’, located under ./experiments/scripts. Parameters other than these are specified as command line arguments, while giving command for training in terminal.
