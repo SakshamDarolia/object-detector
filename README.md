@@ -12,10 +12,10 @@ It detects the target objects in a given image and then specifies them in a boun
 
 4. Place the image folders and their csv files(obtained from exporting the labels and then writing gTruth of that file, in MATLAB) in dataset folder, located in the root directory of the Faster RCNN. Remember that the names of the image folders and their csv files must be the same and start with ‘img’ prefix, followed by a number or a string. Use the following MATLAB code to convert the .mat annotations to csv files,
 
-	>> load(‘path/to/example.mat’)
-	>> gTruth
-	>> labels=objectDetectorTrainingData(gTruth)
-	>> writetable(labels, ‘path/to/save/example.csv’, ‘Delimiter’, ‘ ’)
+	i. load(‘path/to/example.mat’)
+	ii. gTruth
+	iii. labels=objectDetectorTrainingData(gTruth)
+	iv. writetable(labels, ‘path/to/save/example.csv’, ‘Delimiter’, ‘ ’)
 
 5. Make sure that name of the object classes are in line with your dataset(A general dataset may use many number of classes, like pascal voc uses 20 classes). Check for the names of classes in pascal_voc.py(located under ./lib/datasets) and demo_all_bboxes.py(located under ./tools). In demo_all_bboxes in line 195, also change the number of classes according to you data.
 
